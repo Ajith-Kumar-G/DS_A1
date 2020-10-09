@@ -42,13 +42,50 @@ int check(char ch)
     }
 }
 
-//Main
+void inputChecking(char *infix)
+{
+    int operators=0,operand=0,brackets=0;
+    for(int i=0;infix[i]!='\0';i++)
+    {
+       switch(infix[i])
+        {
+            case '(' :  brackets++;
+
+                        break;
+            case ')' :  brackets--;
+                        break;
+            case '+':
+
+            case '-':
+
+            case '*':
+
+            case '^':
+
+            case '/': operators++;
+                        break;
+            default:operand++;
+        }
+    }
+
+
+    if((++operators)==operand && brackets==0)
+        printf("\nThe given expression is valid.\n");
+        else
+        {
+            printf("\nThe given expression is Invalid, retry! \n");
+            main();
+        }
+
+}
+
 
 int main()
 {
     char inFix[50],item,postFix[50];
     int k=0;
     getData(inFix);
+    inputChecking(inFix);
     for(int i=0;inFix[i]!='\0';i++)
     {
         switch(inFix[i])
