@@ -60,20 +60,15 @@ void insertNodeAtBegin()
 {
     struct node *newnode;
     newnode=(struct node*)malloc(sizeof(struct node));
-    if(head==NULL)
-    {
-        head=newnode;
-    }
     printf("\n <--Enter the Details--> ");
     printf("\n ID: ");  scanf("%d",&(newnode->id));
     printf(" Name: ");    scanf("%s",(newnode->name));
     printf(" Sem: ");  scanf("%d",&(newnode->sem));
-
-                newnode->next=head;
-                head=newnode;
-                size++;
-                printf("\n Node created \n");
-                linkedList();
+    newnode->next=head;
+    head=newnode;
+    size++;
+    printf("\n Node created \n");
+    linkedList();
 }
 void insertNodeAtEnd()
 {
@@ -135,14 +130,13 @@ void insertNodeAtAny()
 
 void displayList()
 {
-    int s=0;
     if(head==NULL)
     {
         printf("\n Empty List!\n");
         linkedList();
     }
     printf("\n The List is :");
-    for(struct node*temp=head;temp!=NULL;temp=temp->next)
+    for(struct node *temp=head;temp!=NULL;temp=temp->next)
        {
         printf("\n <---Student Details--->");
         printf("\n ID: %d ",temp->id);
