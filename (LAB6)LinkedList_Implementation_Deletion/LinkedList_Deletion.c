@@ -101,7 +101,7 @@ void deleteNode(int flag)
         linkedList();
     }
     else
-    if(head==head->next)
+    if(head->next==NULL)
     {
          printf("\n Node Deleted. \n Now List Is empty! ");
          free(head);
